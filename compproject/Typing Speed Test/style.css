@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -30,7 +30,9 @@ body{
   cursor: pointer;
   border-radius: 5px;
   position: absolute;
-  bottom: 110px;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .back-button:hover {
@@ -39,7 +41,8 @@ body{
   padding: 10px 40px;
 }
 .wrapper{
-  width: 770px;
+  width: 100%;
+  max-width: 770px;
   padding: 35px;
   background: #fff;
   border-radius: 10px;
@@ -200,5 +203,8 @@ li:not(:first-child) span{
   }
   .content button{
     margin-top: 10px;
+  }
+  .back-button {
+    bottom: 0px; /* Adjust the spacing as needed */
   }
 }

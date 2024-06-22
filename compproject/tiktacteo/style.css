@@ -1,17 +1,18 @@
-*{
+* {
     color: white;
     font-family: sans-serif;
     transition: 0.2s ease-in-out;
     user-select: none;
+    box-sizing: border-box;
 }
 
-.align{
+.align {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-body{
+body {
     background-color: #252A34;
     margin: 0;
     padding: 0;
@@ -20,8 +21,9 @@ body{
     padding-top: 5vh;
 }
 
-.turn-container{
-    width: 170px;
+.turn-container {
+    width: 90%;
+    max-width: 170px;
     height: 80px;
     margin: auto;
     display: grid;
@@ -30,23 +32,23 @@ body{
     position: relative;
 }
 
-.turn-container h3{
+.turn-container h3 {
     margin: 0;
     grid-column-start: 1;
     grid-column-end: 3;
 }
 
-.turn-container .turn-box{
+.turn-container .turn-box {
     border: 3px solid #000;
     font-size: 1.6rem;
     font-weight: 700;
 }
 
-.turn-container .turn-box:nth-child(even){
+.turn-container .turn-box:nth-child(even) {
     border-right: none;
 }
 
-.bg{
+.bg {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -60,59 +62,86 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    height: 500px;
-    width: 515px;
+    width: 90%;
+    max-width: 515px;
+    height: 90vw;
+    max-height: 500px;
+    min-height: 300px;
+    min-width: 300px;
     margin: 30px auto;
     border: 2px solid #000;
 }
 
-.box{
+.box {
     cursor: pointer;
     font-size: 2rem;
     font-weight: 700;
     border: 2px solid #000;
 }
 
-.box:hover{
+.box:hover {
     background-color: #FF2E63;
 }
-.back-button {
+
+.button-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+.back-button, #play-again {
     background-color: #FF2E63;
     border: none;
     color: rgb(9, 9, 9);
     padding: 10px 25px;
     text-align: center;
-    text-decoration:none;
+    text-decoration: none;
     display: inline-block;
     font-size: 1.2rem;
     margin: 10px;
     cursor: pointer;
     border-radius: 5px;
-    position: absolute;
-    bottom: 40px;
-    right: 550px;
-  }
-  
-  .back-button:hover {
-    padding: 10px 40px;
-    background-color: #08D9D6;
-    color: #000;
-  }
-
-#play-again{
-    background-color: #FF2E63;
-    padding: 10px 25px;
-    border: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none;
-    position: absolute;
-    left: 550px;
 }
 
-#play-again:hover{
+.back-button:hover, #play-again:hover {
     padding: 10px 40px;
     background-color: #08D9D6;
     color: #000;
+}
+
+#play-again {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .turn-container {
+        width: 90%;
+    }
+
+    .main-grid {
+        width: 90%;
+        height: auto;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        min-height: 300px;
+        min-width: 300px;
+    }
+
+    .box {
+        font-size: 1.5rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .back-button, #play-again {
+        width: auto;
+        padding: 10px 25px;
+    }
 }

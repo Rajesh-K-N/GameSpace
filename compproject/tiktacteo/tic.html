@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic_Tac_Toe</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/top.jpg" type="image/icon type">
 </head>
 <body>
     <div class="turn-container">
@@ -26,13 +27,15 @@
         <div class="box align">8</div>
     </div>
     <h2 id="results"></h2>
-    <button id="play-again">Play Again</button>
+    <div class="button-container">
+        <button id="play-again">Play Again</button>
+        <button onclick="goBack()" class="back-button">Go Back</button>
+    </div>
     <script src="script.js"></script>
-    <button onclick="goBack()" class="back-button">Go Back</button>
     <script>
         function goBack() {
           window.history.back();
         }
-        </script>
+    </script>
 </body>
 </html>
